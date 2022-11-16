@@ -1,5 +1,8 @@
 var searchButton = document.getElementById("my-city");
 var weatherContainer = document.getElementById("weather-container");
+
+
+// var iconsContainer = document.getElementById("icons-container");
 var day1Weather = document.getElementById("day-1");
 var day2Weather = document.getElementById("day-2");
 var day3Weather = document.getElementById("day-3");
@@ -7,11 +10,35 @@ var day4Weather = document.getElementById("day-4");
 var day5Weather = document.getElementById("day-5");
 
 
+
 //   // ICONS:
 
 var OwApiKey = "ecfada669401915d3a6f7b288000d0ee";
 
+function firstPage() {
+  var weatherBox = document.getElementsByClassName("card");
+  for (var i=0;i< 5 ;i+=1){
+    weatherBox[i].style.display = 'none';
+  }
+  
+  
+}
+
+
+
+//   if (weatherBox.display === "block") {
+//     weatherBox.style.display = "none";
+//   } 
+  
+//   else {
+
+//   weatherContainer.style.display = "none";
+//   }
+// }
+// weatherContainer.onload = function() {firstPage()};
+
 function getWeather(city) {
+
   //      var city = document.getElementById("input-city").value;
   // console.log(city.value);
 

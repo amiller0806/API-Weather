@@ -11,7 +11,7 @@
         <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
-    <body>
+    <body onload="firstPage()">
         <header class="bg-info text-center">
 
             <h1>5-Day Weather Dashboard</h1>
@@ -20,82 +20,84 @@
             <div class="row">
                 <div class="col-md-3">
 
-                    <form class = "enter-city">
-                
-                    <label>Enter City Name</label>
-                    <input title="input-button" type="text" id="input-city" />
-                    <button id="my-city" type="submit" class="btn btn-primary">Search Weather</button>
-                    <!-- <h2 id = "nameCity">--New York--</h2> -->
-                </form>
+                    <form class="enter-city">
+
+                        <label>Enter City Name</label>
+                        <input title="input-button" type="text" id="input-city" />
+                        <button id="my-city" type="submit" class="btn btn-primary">Search Weather</button>
+                        <!-- <h2 id = "nameCity">--New York--</h2> -->
+                    </form>
                 </div>
                 <div class="col-md-9">
-                
+
+                    <!-- <div class="weather" id="weather-container"> -->
                     <div class="d-flex flex-wrap" id="weather-container">
-                        <div class = "icons" id = "icons-container"> 
-<!--------------------------------------- DAY 1 WEATHER  ---------->
-                            <p class = "forecast" id="day-1"></p>
-                      
-                            <!-- ICONS GO HERE -->
-                             
-                            <!-- <img class="wiCon" id = "wIcon" src="" alt=""> -->
-                          
-
-                            </div>
-<!--------------------------------------- DAY 2 WEATHER  ---------->
+                        <div class="icons" id="icons-container">
+                            <!--------------------------------------- DAY 1 WEATHER  ---------->
                             <div class="card">
-            
-                            <p class = "forecast" id="day-2"></p>
-                            <div class = "icons" id = "icons-container">
-                            <!-- ICONS GO HERE -->
-                            <!-- <img class="wiCon" id = "wIcon" src="" alt="weather icon"> -->
-               
+                                <p class="forecast" id="day-1"></p>
+
+                                <!-- ICONS GO HERE -->
+
+                                <!-- <img class="wiCon" id = "wIcon" src="" alt=""> -->
+
 
                             </div>
-<!--------------------------------------- DAY 3 WEATHER  ---------->
-                            <div class="card" >
-                                <div class = "icons">  
+                            <!--------------------------------------- DAY 2 WEATHER  ---------->
+                            <div class="card">
+
+                                <p class="forecast" id="day-2"></p>
+                                <div class="icons" id="icons-container">
                                     <!-- ICONS GO HERE -->
                                     <!-- <img class="wiCon" id = "wIcon" src="" alt="weather icon"> -->
-                            <p class = "forecast" id="day-3"></p>
-                         
-                         
-                 
 
+
+                                </div>
+                                <!--------------------------------------- DAY 3 WEATHER  ---------->
+                                <div class="card">
+                                    <div class="icons">
+                                        <!-- ICONS GO HERE -->
+                                        <!-- <img class="wiCon" id = "wIcon" src="" alt="weather icon"> -->
+                                        <p class="forecast" id="day-3"></p>
+
+
+
+
+                                    </div>
+
+                                    <!--------------------------------------- DAY 4 WEATHER  ---------->
+                                    <div class="card" id="weather-container">
+                                        <div class="icons">
+
+                                            <!-- <img class="wiCon"  id = "wIcon" src="" alt="weather icon"> -->
+                                            <p class="forecast" id="day-4"></p>
+                                            <!-- ICONS GO HERE -->
+
+
+
+                                        </div>
+
+
+                                        <!--------------------------------------- DAY 5 WEATHER  ---------->
+                                        <div class="card">
+                                            <div class="icons">
+                                                <!-- <img class="wiCon"  id = "wIcon" src="" alt="weather icon"> -->
+                                                <p class="forecast" id="day-5"></p>
+
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
                             </div>
-
-                            <!--------------------------------------- DAY 4 WEATHER  ---------->
-                            <div class="card" id="weather-container">
-                                <div class = "icons" > 
-               
-                                    <!-- <img class="wiCon"  id = "wIcon" src="" alt="weather icon"> -->
-                            <p class = "forecast" id="day-4"></p>
-                               <!-- ICONS GO HERE -->
-                          
-                       
-
-                            </div>
-                            
-
-                            <!--------------------------------------- DAY 5 WEATHER  ---------->
-                            <div class="card" >
-                                <div class = "icons">
-                                    <!-- <img class="wiCon"  id = "wIcon" src="" alt="weather icon"> -->
-                                <p class = "forecast" id="day-5"></p>
-                           
-                            </div>  
-                            
-                        
-                            
-
-                            </div>
-
-
                         </div>
-
-                        
-                    </div>
-                </div>
-            </div>
         </main>
 
 
