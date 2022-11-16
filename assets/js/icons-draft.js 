@@ -1,0 +1,11 @@
+var iconCode = a.weather[0].icon;
+var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
+   
+   
+   function showWeatherIcons() {
+
+        $('#conditions').attr('src', iconUrl);
+   
+   
+   }

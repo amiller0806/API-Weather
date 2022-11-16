@@ -1,0 +1,45 @@
+//    const { main, name, sys, weather } = data;
+// const icon = `https://openweathermap.org/img/wn/${
+//   weather[0]["icon"]
+
+
+  //   $(".icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' alt='Icon 
+
+// }@2x.png`;
+ 
+// const li = document.createElement("li");
+// li.classList.add("city");
+// const markup = `
+//   <h2 class="city-name" data-name="${name},${sys.country}">
+//     <span>${name}</span>
+//     <sup>${sys.country}</sup>
+//   </h2>
+//   <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup>
+//   </div>
+//   <figure>
+//     <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
+//     <figcaption>${weather[0]["description"]}</figcaption>
+//   </figure>
+// `;
+// li.innerHTML = markup;
+
+// list.appendChild(li);
+
+  //  weatherCard.appendChild(icon);
+  //  weatherCard.appendChild(cityName);
+
+   
+
+
+  //   var iconCode = data.weather[0].icon;
+  //   var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+  //   $(".icon").html("<img src='" + iconUrl  + "'>");
+
+// var conditions = document.getElementById("conditions");
+// var temperature = document.getElementById("temperature");
+// var humidity = document.getElementById("humidity");
+// var windSpeed = document.getElementById("windSpeed");
+
+var iconCode = data.listweather[0].icon;
+var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+var icon = "<img src='" + iconUrl + "' alt='" + iconCode + "' />";
