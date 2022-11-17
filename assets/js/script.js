@@ -1,3 +1,14 @@
+// Global variables
+var searchHistory = []
+var searchHistory1 = ""
+var searchHistory2 = ""
+var searchHistory3 = ""
+
+
+
+
+// References to DOM elements
+var searchHistoryBox = document.querySelector('#history');
 var searchButton = document.getElementById("my-city");
 var weatherContainer = document.getElementById("weather-container");
 
@@ -11,9 +22,15 @@ var day5Weather = document.getElementById("day-5");
 
 
 
+
 //   // ICONS:
 
 var OwApiKey = "ecfada669401915d3a6f7b288000d0ee";
+
+
+
+
+
 
 function firstPage() {
   var weatherBox = document.getElementsByClassName("card");
@@ -25,6 +42,40 @@ function firstPage() {
 }
 
 
+
+
+
+function renderSearchHistory() {
+
+ // Start at end of history array and count down to show the most recent at the top.
+ for (var i = searchHistory.length - 1; i >= 0; i--) {
+  var btn = document.createElement('button');
+  btn.classList.add('history-btn', 'btn-history');
+
+  // `data-city` allows access to city name when click handler is invoked
+  btn.setAttribute('data-city', searchHistory[i]);
+  btn.textContent = searchHistory[i];
+  searchHistoryBox.append(btn);
+  displayHistory();
+}
+}
+
+// bring saved history data from localstorage and write text on the web page
+function displayHistory (){ 
+  for (i=1; i<4; i++){ 
+      if (localStorage.getItem("key"+(i).toString()) != "null"){
+        document.getElementById("searchHistory-row" + (i).toString()).innerHTML = localStorage.getItem("key"+(i).toString()); 
+      } 
+  }
+  renderSearchHistory();
+}
+
+// Search History to Local Storage 
+
+// Function to display the search history list.
+
+
+// Function to update history in local storage then updates displayed history.
 
 //   if (weatherBox.display === "block") {
 //     weatherBox.style.display = "none";
@@ -76,15 +127,28 @@ function getWeather(city) {
           console.log("error: " + err);
         });
     });
+    displayHistory();
+    updateHistory();
+}
+
+
+
+//update search history
+function updateHistory(){
+  for (i=1; i<4; i++){ 
+    if (localStorage.getItem("key"+(i).toString()) != "null"){
+      document.getElementById("searchHistory-row" + (i).toString()).innerHTML = localStorage.getItem("key"+(i).toString()); 
+    } 
+    
+  }
+  renderSearchHistory();
 }
 
 function appendData(data) {
-  // data.length or 40?
   
   
   
   var weatherContainer = document.querySelector("#weather-container");
-  var imageContainer = document.querySelector("#image-container");
   weatherContainer.textContent = "";
   
   // change to p instead of li?
@@ -148,7 +212,29 @@ function appendData(data) {
 
 
   };
+ saveHistory();
+}
 
+function saveHistory(){
+  searchHistory3 = localStorage.getItem("key2");
+  searchHistory2 = localStorage.getItem("key1");
+  searchHistory1 = document.getElementById("input-city").value;
+  localStorage.setItem("key1", searchHistory1);
+  localStorage.setItem("key2", searchHistory2);
+  localStorage.setItem("key3", searchHistory3);
+  renderSearchHistory();
+}
+
+
+function handleSearchHistoryClick(e) {
+  // Don't do search if current elements is not a search history button
+  if (!e.target.matches('.btn-history')) {
+    return;
+  }
+
+  var btn = e.target;
+  var city = btn.getAttribute('data-city');
+  getWeather(city);
 }
 //  document.getElementById('icon').src = `http://openweathermap.org/img/w/${d.weather[0].icon}.png`;
 
@@ -165,4 +251,7 @@ function appendData(data) {
 
 // addEventListener activated when user clicks search button, will run the getConcerts function
 searchButton.addEventListener("click", getWeather());
+
+searchHistoryBox.addEventListener('click', handleSearchHistoryClick);
+
 
